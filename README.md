@@ -1,3 +1,6 @@
+------------PASSWORD------------
+"123321" 
+------------INFORMATION---------
 hello, This is my first open source project,
 1200+ lines of code, 75000+ characters,
 time to write the first version: 7 days.
