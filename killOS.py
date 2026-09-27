@@ -1345,7 +1345,6 @@ if choice == 3:
     print("b|")
     exit()
 else: 
-    c
     while True:
         input("/")
         print(f"{Fore.GREEN}no bootable device.")
