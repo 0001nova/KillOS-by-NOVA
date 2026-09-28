@@ -4,6 +4,7 @@
 hello, This is my first open source project,
 1200+ lines of code, 75000+ characters,
 time to write the first version: 7 days.
+this project is: "game-quest" simulator of operating system.
 ----------------IMPORTANT:--------------- 
 The game collects data only for the purpose of engaging in the gameplay,
 and also creates a file structure on the disk.
