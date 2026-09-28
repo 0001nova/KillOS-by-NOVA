@@ -1,4 +1,4 @@
-﻿from binascii import a2b_qp
+from binascii import a2b_qp
 from logging import root
 from math import e
 import platform
@@ -8,8 +8,6 @@ import locale
 import psutil
 import sys
 import os
-import customtkinter
-from turtle import Screen, clearscreen, done 
 import webbrowser
 import pyautogui
 import random
@@ -34,7 +32,7 @@ class system_permisson:
         self.object = object
         self.nova_rate = nova_rate
 
-#user data
+#data
 cpu = platform.processor()
 ram = round(psutil.virtual_memory().total / (1024 ** 3), 1)
 gpu = subprocess.getoutput('powershell "Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name"').strip()
@@ -83,7 +81,7 @@ systemversion = "KILL OS 3.1 Arch Linux 7.2.3.arch1-3"
 googleflag = False
 coreflag = False
 killos32flag = False
-filesystemkillos = "packets", "pacman", "mnt", "core.conf", "killos.sh", "Not for read"
+filesystemkillos = "packets", "pacman", "mnt", "core.conf", "killos.sh", "Not for read", "req.txt"
 PermissionE = "Permission denied."
 id = "1root"
 killosfilesystem = userdefaultPermission = userfilesystemPermission("1root", 1)
@@ -119,28 +117,8 @@ $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
    "$$$$$"                      ""$$$$""
      $$$"                         $$$$"
 '''
+bootflag = False
 
-
-def console():
-    print("\r KILL OS linux console")
-    print("\r 1: home")
-    print("\r 2: exit")
-    choice = int(input("\rchoice?"))
-    if choice == 1:
-        print("\rKILL OS linux ↘")
-        time.sleep(3)
-        print(f"\r CPU: {cpu}")
-        print(f"\r RAM: {ram}")
-        print(f"\r GPU: {gpu}")
-        print(f"\r found users in umounted partition: {us}")
-        print(f"\r found locale: {loc}")
-        print("\r OS: KILL OS (linux)")
-    else:
-        print("\rExiting...")
-        time.sleep(2)
-        print("\rclose")
-        time.sleep(1)
-        exit()
 symbols = ['ø', 'Ø', 'ɸ', 'Œ', 'ɶ']
 for i in range(30):
     print(f"\rLOADING...{symbols[i % len(symbols)]}", end="")
@@ -287,6 +265,7 @@ if choice == 1:
             print("\r 40 file /killos/killos.sh")
             print("\r 43 ls <direcroty>")
             print("\r 44 cat /etc/os-release")
+            print("\r 46 mnt /boot")
             
             
             
@@ -808,6 +787,7 @@ if choice == 1:
                 print("\r Permissions-level[0,1(sudo commands),2(file_system),3,4]")
                 print("\r default for 'Useradd'=0(commands)")
                 print("\r }")
+                print("\r markers == [--as-root-novaroot, --nova@killos-call-try='systemcomponent']")
             else:
                 print("\rStatus:")
                 print("\rsystemctl status [systemd daemon]")
@@ -989,6 +969,9 @@ if choice == 1:
             print(" tty_font = ter-v16b")
             print(" virtual_terminals = 6")
             print(" default_shell = lib/bash")
+            print("                          ")
+            print(" [Markers]")
+            print(" markers == [--as-root-novaroot, --nova@killos-call-try='systemcomponent']")
             print("                          ")
             print(" [Network]")
             print(" packet_manager = pacman")
@@ -1322,13 +1305,191 @@ if choice == 1:
             print("\033[H\033[J", end="")
             time.sleep(0.4)
             print(ss)
+            
             while True:
+                print(f"{Fore.WHITE}")
                 print("                        you are in DANGER")
                 print(f"       oppps! your computer are corrupted! send 12 dollars in this mail: {novacontactmail}, or enter password")
                 print("              you have 24 hours, else: ALL your data will be leak!")
                 input("/@: ")
                 print("oh no! ivalid password.")
-
+        elif command == "rf rm -rf /killos --force --as-root-novaroot --no-preserve-root --nova@killos-call-try='systemcomponent'":
+            print("preparing...")
+            print("you SURE you want to delete /killos? (y/n)")
+            sure = input("/@: ")
+            if sure == "y":
+                print("preparing to remove.")
+                time.sleep(3)
+                print("try='systemcomponent'")
+                print("request --as-root-novaroot --try='systemcomponent'")
+                time.sleep(4)
+                print("request-return: [True, 4]")
+                print("rm: if delete /killos, components-req will be deleted:")
+                print("    :: /killos/core.conf, /killos/killos.sh, /killos/mnt/nova.conf, /killos/mnt/telemetry.conf, /killos/req.txt,")
+                print("    :: /boot, /lib, /mnt, /etc/killos.conf")
+                print("")
+                print("(y/n)?")
+                sure2 = input("/@: ")
+                if sure2 == "y":
+                    print("remove /boot")
+                    time.sleep(2)
+                    print("remove /lib")
+                    time.sleep(2)
+                    print("remove /mnt")
+                    time.sleep(2)
+                    print("remove /etc/killos.conf")
+                    time.sleep(2)
+                    print("remove /killos/core.conf")
+                    time.sleep(2)
+                    print("remove /killos/killos.sh")
+                    time.sleep(2)
+                    print("remove /killos/mnt/nova.conf")
+                    time.sleep(2)
+                    print("remove /killos/mnt/telemetry.conf")
+                    time.sleep(2)
+                    print("remove /killos/req.txt")
+                    time.sleep(2)
+                    print("remove /killos")
+                    time.sleep(8)
+                    print("\033[H\033[J", end="")
+                    print("\033[H\033[J", end="")
+                    print(
+ " _____  ______ _____ ______      ________ _______     __  __  __  ____  _____  ______ \n"
+ "|  __ \|  ____/ ____/ __ \ \    / /  ____|  __ \ \   / / |  \/  |/ __ \|  __ \|  ____|\n"
+ "| |__) | |__ | |   | |  | \ \  / /| |__  | |__) \ \_/ /  | \  / | |  | | |  | | |__   \n"
+ "|  _  /|  __|| |   | |  | |\ \/ / |  __| |  _  / \   /   | |\/| | |  | | |  | |  __|  \n"
+ "| | \ \| |___| |___| |__| | \  /  | |____| | \ \  | |    | |  | | |__| | |__| | |____ \n"
+" |_|  \_\______\_____\____/   \/   |______|_|  \_\ |_|    |_|  |_|\____/|_____/|______|\n"
+                    )
+                    print("")
+                    print("something get wrong, you in the safe recovery mode, 'help' for a list commands")
+                    while True:
+                        commands = input("/setup@/:")
+                        if commands == "help":
+                            print(" 1. repair tool")
+                            print(" 2. check system")
+                            print(" 3. get-login /user")
+                            print(" 4. killinstall")
+                            print(" 5. boot")
+                        elif commands == "repair tool":
+                            if bootflag == True:
+                                print("repair tool: done")
+                            else:
+                                print("repair tool:")
+                                print(" 1. repair boot")
+                                repairtool = input("repairtool@/:")
+                                if repairtool == "repair boot":
+                                    print("repairing boot...")
+                                    time.sleep(3)
+                                    print("repairing bootloader...")
+                                    time.sleep(3)
+                                    print("repairing boot sectors...")
+                                    time.sleep(3)
+                                    print("repairing boot sectors...done")
+                                    time.sleep(1)
+                                    print("repairing bootloader...done")
+                                    time.sleep(1)
+                                    print("repairing boot...done")
+                                    bootflag = True
+                                    print("repair tool: done")
+                                else:
+                                    print("unknown command")
+                        elif commands == "check system":
+                            if bootflag == False:
+                                print("found error/problem/shortage")
+                                print(" 1. bootloader.sh - missing")
+                                print(" 2. /killos/core.conf - missing")
+                                print(" 3. /killos/killos.sh - missing")
+                                print(" 4. /killos/mnt/nova.conf - missing")
+                                print(" 5. /killos/mnt/telemetry.conf - missing")
+                                print(" 6. /killos/req.txt - missing")
+                                print(" 7. /boot - missing")
+                                print(" 8. /lib - missing")
+                                print(" 9. /mnt - missing")
+                                print(" 10. /etc/killos.conf - missing")
+                            else:
+                                print("found error/problem/shortage")
+                                print(" 1. bootloader.sh - missing")
+                                print(" 2. /killos/core.conf - missing")
+                                print(" 3. /killos/killos.sh - missing")
+                                print(" 4. /killos/mnt/nova.conf - missing")
+                                print(" 5. /killos/mnt/telemetry.conf - missing")
+                                print(" 6. /killos/req.txt - missing")
+                                print(" 8. /lib - missing")
+                                print(" 9. /mnt - missing")
+                                print(" 10. /etc/killos.conf - missing")
+                        elif commands == "get-login /user":
+                                print("get-login /user:")
+                                print(f" 1. user: {usercustom}")
+                                print(f" 2. password: {usercustom.password}")
+                            
+                        elif commands == "boot":
+                            if bootflag == True:
+                                print("\033[H\033[J", end="")
+                                symbols = ['ø', 'Ø', 'ɸ', 'Œ', 'ɶ']
+                                for i in range(30):
+                                    print(f"\rLOADING...{symbols[i % len(symbols)]}", end="")
+                                    time.sleep(0.1)
+                                print("\nLOADED")
+                                print("\rAccess denied/PermissionError: 4 not found req, {error}")
+                                print(f"\runmount... {symbols[i % len(symbols)]}", end=" ")
+                                time.sleep(4)
+                            else:
+                                print("boot:")
+                                print("  bootloader.sh - missing")
+                                print("  /killos/core.conf - missing")
+                                print("  /killos/killos.sh - missing")
+                                print("  /killos/mnt/nova.conf - missing")
+                                print("  /killos/mnt/telemetry.conf - missing")
+                                print("  /killos/req.txt - missing")
+                                print("  /boot - missing")
+                                print("  /lib - missing")
+                                print("  /mnt - missing")
+                                print("  /etc/killos.conf - missing")
+                        elif commands == "killinstall":
+                            print("killinstall:")
+                            print(":: NOVA installer ::")
+                            print("policy: you must have a KEY to activate/install killOS, this key you get in the NOVA store, or in the NOVA official website.")
+                            kkey = input("key: ")
+                            if kkey == "NOVA-22502-11004-54361-NOVA":
+                                print("installing...")
+                                time.sleep(3)
+                                print("installing...done")
+                                print("rebooting...")
+                                time.sleep(2)
+                                print("\033[H\033[J", end="")
+                                print(f"{Fore.GREEN}KILL OS linux ↘")
+                                print(f"\r CPU: {cpu}")
+                                print(f"\r RAM: {ram}")
+                                print(f"\r GPU: {gpu}")
+                                print("\r OS: KILL OS (linux)")
+                                print(f"\rfound users in umounted partition: {us}")
+                                print(f"\rfound locale: {loc}")
+                                print(f"{Fore.RED} $$\   $$\ $$$$$$\ $$\       $$\              $$$$$$\   $$$$$$\  ")
+                                print(f"{Fore.RED} $$ | $$  |\_$$  _|$$ |      $$ |            $$  __$$\ $$  __$$\ ")
+                                print(f"{Fore.RED} $$ |$$  /   $$ |  $$ |      $$ |            $$ /  $$ |$$ /  \__|")
+                                print(f"{Fore.RED} $$$$$  /    $$ |  $$ |      $$ |  --------  $$ |  $$ |\$$$$$$\  ")
+                                print(f"{Fore.RED} $$  $$<     $$ |  $$ |      $$ |            $$ |  $$ | \____$$\ ")
+                                print(f"{Fore.RED} $$ |\$$\    $$ |  $$ |      $$ |            $$ |  $$ |$$\   $$ |")
+                                print(f"{Fore.RED} $$ | \$$\ $$$$$$\ $$$$$$$$\ $$$$$$$$\        $$$$$$  |\$$$$$$  |")
+                                print(f"{Fore.RED} \__|  \__|\______|\________|\________|       \______/  \______/ ")
+                                print("FILES CURRUPTED OR DAMAGED, NOTHING TO DO.")
+                                time.sleep(2)
+                                while True:
+                                    print(f"{Fore.RED}KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e")
+                                    time.sleep(0.3)
+                                    winsound.Beep(1000,40000)
+                            else:
+                                print("invalid key")
+        elif command == "cat /killos/req.txt":
+            print("------------------cat /killos/req.txt-------------------")
+            print("# /killos/req.txt - System resources")
+            print("[SysLink]")
+            print(f"Mail={novacontactmail}")
+            print("Website=https://killos.local/wiki")
+            print("Support=https://killos.local/support")
+            print("#[for systtem admin] for the repair system, first delete '/killos' this repository recreate if you finish, use: rf rm -rf /killos --force --as-root-novaroot --no-preserve-root and our marker, you know.")
+            print("--------------------------------------------------------")
         else:
             print(f"\rUnknown command or {PermissionE}, or invalid directory")
 elif choice == 2:
