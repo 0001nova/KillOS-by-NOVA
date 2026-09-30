@@ -266,6 +266,7 @@ if choice == 1:
             print("\r 43 ls <direcroty>")
             print("\r 44 cat /etc/os-release")
             print("\r 46 mnt /boot")
+            print("\r 38 cat /killos/req.txt")
             
             
             
