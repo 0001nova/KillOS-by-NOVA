@@ -2,18 +2,26 @@ from binascii import a2b_qp
 from logging import root
 from math import e
 import platform
+import shutil
 import subprocess
 import time
 import locale
 import psutil
 import sys
+import threading
 import os
+from supabase import *
+import requests
+import getpass
 import webbrowser
 import pyautogui
 import random
 from colorama import *
 import winsound
 from pathlib import Path
+import winreg as reg
+import sys
+admintools = False
 
 class usercreate:
     def __init__(self, username, usermode, password):
@@ -32,8 +40,81 @@ class system_permisson:
         self.object = object
         self.nova_rate = nova_rate
 
-#data
+
+def function1():
+    print("")
+    if usercustom.username == "root":
+        time.sleep(100)
+        print("you are in 'root', recommended to work under you own user")
+        print("create your user with 'useradd'")
+    else:
+        pass
+
+def function2():
+    time.sleep(100)
+    print("\rad: want private/anonymity? i known you choice: NOVA Private Subscription")
+def sup():
+            print(" _____________________________________________")
+            print("|  K1LLM3NU (super)                           |")
+            print("|_____________________________________________|")
+            print("| 1. dolphin                                  |")
+            print("| 2. shutdown                                 |")
+            print("| 3. sudo useradd                             |")
+            print("| 4. kill os                                  |")
+            print("|                                             |")
+            print("|_____________________________________________|")
+            print("  :: enter only number")
+            superi = input("/killmenu@/ ")
+            if superi == "1":
+                print("\rStarting dolphin file manager...")
+                time.sleep(1)
+                subprocess.run(["explorer.exe"])
+            elif superi == "2":
+                os.system("shutdown /s /t 0")
+            elif superi == "3":
+                username = input(" -m -g users -G wheel -s /bin/bash ")
+                usercustom = usercreate(username, 0, password)
+                user = username
+                password = input("sudo passwd: ")
+                time.sleep(1)
+                print(f"\rUser {username} created successfully.")
+            elif superi == "4":
+                print("\r                linux: killOS")
+                print(f"\r $$\   $$\               CPU: {cpu}")
+                print(f"\r $$ | $$  |                RAM: {ram}")
+                print(f"\r $$ |$$  /                  GPU: {gpu}")
+                print(f"\r $$$$$  /                   found users in umounted partition: {us}")
+                print(f"\r $$  $$<                   found locale: {loc}")
+                print("\r  $$ |\$$\                 ")
+                print("\r  $$ | \$$\                console: bash")
+                print("\r  \__|  \__|")
+
+def WYKOM():
+    print(" you are:")
+    print(usercustom)
+    print(" you have:")
+    print(cpu)
+    print(f"{ram} G of RAM")
+    print(gpu)
+    print("you communicate on: ")
+    print(loc)
+    print("you password is:")
+    print(usercustom.password)
+    print("you are name:")
+    print(name_machine)
+    print("microsoft:")
+    print(mail)
+
+def thead_func():
+    while True:
+        time.sleep(random.randint(1060, 6705))
+        random.choice([function1, function2])()
+background_activity = threading.Thread(target=thead_func, daemon=True)
+
+name_machine = getpass.getuser()
+all = sorted(os.listdir(os.path.join(os.path.expanduser("~"), "Desktop")))
 cpu = platform.processor()
+mail = f"{name_machine}@microsofT.account"
 ram = round(psutil.virtual_memory().total / (1024 ** 3), 1)
 gpu = subprocess.getoutput('powershell "Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name"').strip()
 loc = locale.getdefaultlocale()[0]
@@ -44,6 +125,13 @@ if user == "root":
     usermode = 1
 else:
     usermode = 0
+supabase: Client = create_client("https://qqpsevxwdrkkzovgjzet.supabase.co", "sb_publishable_bPuaZflzw7e2QZLJBuPEUQ_uhZASJWj")
+newus = ""
+ulrelease = ("https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases")
+respose = requests.get(ulrelease)
+datarelease = respose.json()
+for index, release in enumerate(datarelease, start=1):
+    versionrelease = release.get("tag_name", "N/A")
 User = usercreate("root", usermode, 123321)
 User.username = user
 usercustom = User
@@ -55,8 +143,9 @@ sysinfo = {
     "OS": "KILL OS (linux)"
 }
 novacontactmail = "nova@killos.org"
-rootdir = Path("D:/killOS")
+rootdir = Path("C:/killOS")
 filesystem = [
+    rootdir / "releases",
     rootdir / "boot" / "killos",
     rootdir / "boot" / "mnt",
     rootdir / "mnt",
@@ -68,9 +157,15 @@ filesystem = [
     rootdir / "pacman"]
 for folder in filesystem:
     folder.mkdir(parents=True, exist_ok=True)
+forboot = Path(sys.argv[0]).resolve()
+forbootdir = rootdir / "boot" / "killos"
+sett = forbootdir / forboot.name
+if not sett.exists():
+    shutil.copy2(forboot, sett)
 session_time = time.time()
 error = "KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e"
 DNS = 1111, 8080
+perflag = False
 yayactive = False
 googleinstall = False
 directory = ""
@@ -81,6 +176,7 @@ systemversion = "KILL OS 3.1 Arch Linux 7.2.3.arch1-3"
 googleflag = False
 coreflag = False
 killos32flag = False
+masreal = 0
 filesystemkillos = "packets", "pacman", "mnt", "core.conf", "killos.sh", "Not for read", "req.txt"
 PermissionE = "Permission denied."
 id = "1root"
@@ -118,6 +214,221 @@ $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
      $$$"                         $$$$"
 '''
 bootflag = False
+key = "NOVA-543-NOVA"
+
+background_activity.start()
+
+the_final = '''
+from binascii import a2b_qp
+from logging import root
+from math import e
+import platform
+import shutil
+import subprocess
+import time
+import locale
+import psutil
+import sys
+import threading
+import os
+import requests
+import getpass
+import webbrowser
+import pyautogui
+import random
+from colorama import *
+import winsound
+from pathlib import Path
+import winreg as reg
+import sys
+
+class usercreate:
+    def __init__(self, username, usermode, password):
+        self.username = username
+        self.usermode = usermode
+        self.password = password
+
+class userfilesystemPermission:
+    def __init__(self, userType, PermissionUser):
+        self.userType = userType
+        self.PermissionUser = PermissionUser
+
+class system_permisson:
+    def __init__(self, permission, object, nova_rate):
+        self.permission = permission
+        self.object = object
+        self.nova_rate = nova_rate
+
+
+def function1():
+    print("")
+    if usercustom.username == "root":
+        time.sleep(100)
+        print("you are in 'root', recommended to work under you own user")
+        print("create your user with 'useradd'")
+    else:
+        pass
+
+def function2():
+    time.sleep(100)
+    print("\rad: want private/anonymity? i known you choice: NOVA Private Subscription")
+def sup():
+            print(" _____________________________________________")
+            print("|  K1LLM3NU (super)                           |")
+            print("|_____________________________________________|")
+            print("| 1. dolphin                                  |")
+            print("| 2. shutdown                                 |")
+            print("| 3. sudo useradd                             |")
+            print("| 4. kill os                                  |")
+            print("|                                             |")
+            print("|_____________________________________________|")
+            print("  :: enter only number")
+            superi = input("/killmenu@/ ")
+            if superi == "1":
+                print("\rStarting dolphin file manager...")
+                time.sleep(1)
+                subprocess.run(["explorer.exe"])
+            elif superi == "2":
+                os.system("shutdown /s /t 0")
+            elif superi == "3":
+                username = input(" -m -g users -G wheel -s /bin/bash ")
+                usercustom = usercreate(username, 0, password)
+                user = username
+                password = input("sudo passwd: ")
+                time.sleep(1)
+                print(f"\rUser {username} created successfully.")
+            elif superi == "4":
+                print("\r                linux: killOS")
+                print(f"\r $$\   $$\               CPU: {cpu}")
+                print(f"\r $$ | $$  |                RAM: {ram}")
+                print(f"\r $$ |$$  /                  GPU: {gpu}")
+                print(f"\r $$$$$  /                   found users in umounted partition: {us}")
+                print(f"\r $$  $$<                   found locale: {loc}")
+                print("\r  $$ |\$$\                 ")
+                print("\r  $$ | \$$\                console: bash")
+                print("\r  \__|  \__|")
+
+def WYKOM():
+    print(" you are:")
+    print(usercustom)
+    print(" you have:")
+    print(cpu)
+    print(f"{ram} G of RAM")
+    print(gpu)
+    print("you communicate on: ")
+    print(loc)
+    print("you password is:")
+    print(usercustom.password)
+    print("you are name:")
+    print(name_machine)
+    print("microsoft:")
+    print(mail)
+
+def thead_func():
+    while True:
+        time.sleep(random.randint(1060, 6705))
+        random.choice([function1, function2])()
+        
+background_activity = threading.Thread(target=thead_func, daemon=True)
+
+#data
+name_machine = getpass.getuser()
+all = sorted(os.listdir(os.path.join(os.path.expanduser("~"), "Desktop")))
+cpu = platform.processor()
+mail = f{name_machine}@microsofT.account
+ram = round(psutil.virtual_memory().total / (1024 ** 3), 1)
+gpu = subprocess.getoutput('powershell Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name').strip()
+loc = locale.getdefaultlocale()[0]
+us = os.getlogin()
+user = root
+usermodee = [0, 1, 2, 3, 4]
+if user == root:
+    usermode = 1
+else:
+    usermode = 0
+User = usercreate("root", usermode, 123321)
+User.username = user
+usercustom = User
+textcreate = 
+sysinfo = {
+    "CPU": f{cpu},
+    "RAM": f{ram},
+    "GPU": f{gpu},
+    "OS": "KILL OS (linux)"
+}
+novacontactmail = nova@killos.org
+rootdir = Path(C:/killOS)
+filesystem = [
+    rootdir / releases,
+    rootdir / boot / killos,
+    rootdir / boot / mnt,
+    rootdir / mnt,
+    rootdir / setup,
+    rootdir / root,
+    rootdir / etc,
+    rootdir / killos / mnt,
+    rootdir / lib,
+    rootdir / pacman]
+for folder in filesystem:
+    folder.mkdir(parents=True, exist_ok=True)
+forboot = Path(sys.argv[0]).resolve()
+forbootdir = rootdir / boot / killos
+sett = forbootdir / forboot.name
+if not sett.exists():
+    shutil.copy2(forboot, sett)
+session_time = time.time()
+error = KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e
+DNS = 1111, 8080
+perflag = False
+yayactive = False
+googleinstall = False
+directory = 
+lib_list = 
+systemversion = KILL OS 3.1 Arch Linux 7.2.3.arch1-3
+googleflag = False
+coreflag = False
+killos32flag = False
+filesystemkillos = packets, pacman, mnt, core.conf, killos.sh, Not for read, req.txt
+PermissionE = Permission denied.
+id = 1root
+killosfilesystem = userdefaultPermission = userfilesystemPermission(1root, 1)
+statusconf = False
+usercustom = usercreate(root, 1, 123321)
+permissionnovafileactions = False
+cdboot = False
+ss = 
+                 uuuuuuu
+             uu$$$$$$$$$$$uu
+          uu$$$$$$$$$$$$$$$$$uu
+         u$$$$$$$$$$$$$$$$$$$$$u
+        u$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$"   "$$$"   "$$$$$$u
+       "$$$$"      u$u       $$$$"
+        $$$u       u$u       u$$$
+        $$$u      u$$$u      u$$$
+         "$$$$uu$$$   $$$uu$$$$"
+          "$$$$$$$"   "$$$$$$$"
+            u$$$$$$$u$$$$$$$u
+             u$"$"$"$"$"$"$u
+  uuu        $$u$ $ $ $ $u$$       uuu
+ u$$$$        $$$$$u$u$u$$$       u$$$$
+  $$$$$uu      "$$$$$$$$$"     uu$$$$$$
+u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$
+$$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
+ """      ""$$$$$$$$$$$uu ""$"""
+           uuuu ""$$$$$$$$$$uuu
+  u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$
+  $$$$$$$$$$""""           ""$$$$$$$$$$$"
+   "$$$$$"                      ""$$$$""
+     $$$"                         $$$$"
+
+bootflag = False
+key = 'NOVA-543-NOVA'
+
+#active daemons
+background_activity.start()'''
 
 symbols = ['ø', 'Ø', 'ɸ', 'Œ', 'ɶ']
 for i in range(30):
@@ -137,10 +448,20 @@ else:
     time.sleep(4)
     exit()
 for i in range(30):
-    print(f"\rLOADING SYSTEM...{symbols[i % len(symbols)]}", end="")
+    print(f"\rLOADING...{symbols[i % len(symbols)]}", end="")
     time.sleep(0.1)
-
+print(f"\rLOADING SYSTEM...{symbols[i % len(symbols)]}", end="")
+time.sleep(0.1)
 print("\nSYSTEM LOADED")
+print("\nNOVA key? 'pass' to enter the free edition")
+key2 = input()
+if key2 == key:
+    print("\rgranted")
+elif key2 == "pass":
+    print("\rgranted")
+else:
+    print("\rdenied")
+    exit()
 print("\nRunning system...")
 time.sleep(1)
 print("System run.")
@@ -254,6 +575,7 @@ if choice == 1:
             print("\r 38 cat /killos/killos.sh")
             print("\r 29 whoami")
             print("\r NOVAmenu")
+            print("\r 38 cat /killos/req.txt")
             print("\r 30 id")
             print("\r 31 pwd")
             print("\r 32 uname -a")
@@ -266,8 +588,26 @@ if choice == 1:
             print("\r 43 ls <direcroty>")
             print("\r 44 cat /etc/os-release")
             print("\r 46 mnt /boot")
-            print("\r 38 cat /killos/req.txt")
-            
+            print("\r 47 bootloader mode")
+            print("\r 49 minigame")
+            print("\r 50 releases")
+            print("\r 51 bootloader mode --dis ")
+            print("\r 52 bootloader mode --en ")
+            print("\r 53 DE | broken |")
+            print("\r 54 killos -wykom (killos what you know of me)")
+            print("\r 55 NOVA Private Subscription (or 'NPS')")
+            print("\r 56 nova permission (or 'np')")
+            print("\r 57 pacman -S DE --x11 Ø | broken |")
+            print("\r 58 DE --x11 Ø | broken |")
+            print("\r 59 NOVAccount (nova account)")
+            print("\r 60 getaccount")
+            print("\r 61 getaccount --delete")
+            print("\r 62 version --max")
+            print("\r 63 NOVANetwork --chat")
+            print("\r 64 our TikTok")
+            print("\r ")
+            print("\r ")
+            print("\r 0 super (or 'sp')")
             
             
 
@@ -661,7 +1001,7 @@ if choice == 1:
             print(f"{Fore.GREEN}[ ✓ ] unmounting /nvme0n1p1")
             print(f"{Fore.WHITE}")
             time.sleep(3)
-            exit()
+            os.system("shutdown /s /t 0")
         elif command == "reboot":
             print("\rRebooting...")
             time.sleep(3)
@@ -675,6 +1015,7 @@ if choice == 1:
             print("\r[  ] mounting /boot/killos")
             print("\r[  ] mounting /nvme0n1p1")
             time.sleep(3)
+            os.system("shutdown /r /t 0")
             
         elif command == "sudo useradd":
             print("\rsudo useradd")
@@ -697,8 +1038,8 @@ if choice == 1:
                 usercustom.usermode = 1
                 usercustom.username = "root"
                 print(f"\rUser {username} deleted successfully.")
-        elif command == "sudo usermode":
-            print("\rsudo usermode")
+        elif command == "sudo usermod":
+            print("\rsudo usermod")
             username = input("Enter the username to modify: ")
             if username == usercustom.username:
                 new_username = int(input("Enter the mode(0 and 1): "))
@@ -734,7 +1075,7 @@ if choice == 1:
         elif command == "display":
             print("\rDisplay information:")
             print(f"\rUsername: {usercustom.username}")
-            print(f"\rUsermode: {usercustom.usermode}")
+            print(f"\rUsermod: {usercustom.usermode}")
             print(f"\rPassword: {usercustom.password}")
             print(f"\rSystem Information: {sysinfo}")
             print(f"\rSession Time: {session_time}")
@@ -990,10 +1331,17 @@ if choice == 1:
             print(" services_enabled = killos-core, killosnetwork")
             print("------------------------------------------------------------")
         elif command == "cat /killos/killos.sh":
-            cat = system_permisson(4,"cat", 4)
-            if cat.permission == 4:
-                print("cat:")
-                print(f"     error, killos.sh No such file or directory< {PermissionE}")
+            if perflag == False:
+                cat = system_permisson(4,"cat", 4)
+                if cat.permission == 4:
+                    print("cat:")
+                    print(f"     error, killos.sh No such file or directory< {PermissionE}")
+            else:
+                print("------------------cat /killos/killos.sh-------------------")
+                print(the_final, "...")
+                print("------------------------------------------------------------")
+                print("you... win")
+                
         elif command == "ls -l /killos/killos.sh":
             print("\r-rw-r--r-- 1 root system_component 27262976 -- --:-- killos.sh")
         elif command == "file /killos/killos.sh":
@@ -1482,6 +1830,139 @@ if choice == 1:
                                     winsound.Beep(1000,40000)
                             else:
                                 print("invalid key")
+        elif command == "minigame":
+            print(" hello! welcome to minigame, controls: 1, 2, 3, 4")
+            print("'exit' for exit")
+            while True:
+                gamechoisecont = input("choice: ")
+                if gamechoisecont == "1":
+                    print("|     |_______________________________")
+                    print("|        *      |     |      |        |")
+                    print("|               |     |      |        |")
+                    print("|               |     |      |        |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|_____________________________________|")
+                    choise = (random.choice(["1", "2", "3", "4"]))
+                    if choise == "1":
+                        print("|  x  |_______________________________")
+                        print("|        *      |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        time.sleep(1)
+                        print("|     |_______________________________")
+                        print("|     x  *      |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        print("                        --------- I FIND YOU. ---------     ")
+                    else:
+                        print("   OKEY, IM NOT FIND YOU :(   ")
+                elif gamechoisecont == "2":
+                    print("|     |_______________________________")
+                    print("|               |    *|      |        |")
+                    print("|               |     |      |        |")
+                    print("|               |     |      |        |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|_____________________________________|")
+                    choise2 = (random.choice(["1", "2", "3", "4"]))
+                    if choise2 == "2":
+                        print("|  x  |_______________________________")
+                        print("|               |    *|      |        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        time.sleep(1)
+                        print("|     |_______________________________")
+                        print("|               | x  *|      |        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        print("                        --------- I FIND YOU. ---------     ")
+                    else:
+                        print("   OKEY, IM NOT FIND YOU :(   ")
+                elif gamechoisecont == "3":
+                    print("|     |_______________________________")
+                    print("|               |     |     *|        |")
+                    print("|               |     |      |        |")
+                    print("|               |     |      |        |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|_____________________________________|")
+                    choise3 = (random.choice(["1", "2", "3", "4"]))
+                    if choise3 == "2":
+                        print("|  x  |_______________________________")
+                        print("|               |     |     *|        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        time.sleep(1)
+                        print("|     |_______________________________")
+                        print("|               |     |  x  *|        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        print("                        --------- I FIND YOU. ---------     ")
+                    else:
+                        print("   OKEY, IM NOT FIND YOU :(   ")
+                elif gamechoisecont == "4":
+                    print("|     |_______________________________")
+                    print("|               |     |      |      * |")
+                    print("|               |     |      |        |")
+                    print("|               |     |      |        |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|_____________________________________|")
+                    choise4 = (random.choice(["1", "2", "3", "4"]))
+                    if choise4 == "2":
+                        print("|  x  |_______________________________")
+                        print("|               |     |      |      * |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        time.sleep(1)
+                        print("|     |_______________________________")
+                        print("|               |     |      |  x   * |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        print("                        --------- I FIND YOU. ---------     ")
+                    else:
+                        print("   OKEY, IM NOT FIND YOU :(   ")
+                elif gamechoisecont == "exit":
+                    print("exit minigame")
+                    break
         elif command == "cat /killos/req.txt":
             print("------------------cat /killos/req.txt-------------------")
             print("# /killos/req.txt - System resources")
@@ -1491,11 +1972,399 @@ if choice == 1:
             print("Support=https://killos.local/support")
             print("#[for systtem admin] for the repair system, first delete '/killos' this repository recreate if you finish, use: rf rm -rf /killos --force --as-root-novaroot --no-preserve-root and our marker, you know.")
             print("--------------------------------------------------------")
+        elif command == "bootloader mode --en":
+            kp = r"Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
+            try:
+                key = reg.OpenKey(
+                    reg.HKEY_CURRENT_USER, kp, 0, reg.KEY_SET_VALUE
+                )
+                killpath = r"C:\KillOS\boot\killos\KillOS.exe"
+                reg.SetValueEx(key, "Shell", 0, reg.REG_SZ, killpath)
+                reg.CloseKey(key)
+                print("you pc will shutdown, YOU HAVE 10 SEC")
+                os.system("shutdown /s /t 10")
+            except Exception as e:
+                print("err")
+        elif command == "bootloader mode --dis":
+            kp = r"Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
+            try:
+                key = reg.OpenKey(
+                    reg.HKEY_CURRENT_USER, kp, 0, reg.KEY_SET_VALUE
+                )
+                killpath2 = r"C:\Windows\explorer.exe"
+                reg.SetValueEx(key, "Shell", 0, reg.REG_SZ, killpath2)
+                reg.CloseKey(key)
+            except Exception as e:
+                print("err")
+        elif command == "releases":
+            ulrelease = ("https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases")
+            respose = requests.get(ulrelease)
+
+            if respose.status_code == 200:
+                datarelease = respose.json()
+
+                if datarelease:
+                    print(":: releases: :: ")
+                    
+                    for index, release in enumerate(datarelease, start=1):
+                        versionrelease = release.get("tag_name", "N/A")
+                        print(f"[{index}] :: - {versionrelease} - ::")
+
+                    choice_input = input("\nselect release number for download (or 'c' to cancel) //: ")
+
+                    if choice_input.isdigit():
+                        selected_idx = int(choice_input) - 1
+
+                        
+                        if 0 <= selected_idx < len(datarelease):
+                            chosen_release = datarelease[selected_idx]
+                            assets = chosen_release.get("assets", [])
+
+                            if assets:
+                                fordownload = assets[0]["browser_download_url"]
+                                fname = assets[0]["name"]
+                                
+                                print(f"\nDownloading {fname}...")
+                                with requests.get(fordownload, stream=True) as r:
+                                    r.raise_for_status()
+                                fulldir = rootdir / "releases" / fname
+                                with open(fulldir, "wb") as f:
+                                        for chunk in r.iter_content(chunk_size=8192):
+                                            f.write(chunk)
+
+                                print(f"download done, :: --> {fname} <-- ::, release will saves in /releases (if windows, in C:/killOS/releases)")
+                        else:
+                            print("number err.")
+                    else:
+                        print("download falure, invalid.")
+            else:
+                print(f"Git to the killOS: {respose.status_code}.")
+        elif command in ("super", "sp"):
+            sup()
+        elif command == "DE":
+            all = sorted(os.listdir(os.path.join(os.path.expanduser("~"), "Desktop")))
+            print("-------------------------------------------------------------")
+            print(f"\ryou can open: {all}")
+            print("\renter name for open (or 'c' to cancel, or 'super' to k1llm3nu)")
+            print("---------------------------<super>---------------------------")
+            deInput = input("/: ")
+            if deInput.lower() == "c":
+                print("\rok")
+            elif deInput in all:
+                os.startfile(os.path.expanduser("~"), "Desktop", deInput)
+            elif deInput == "super":
+                sup()
+        elif command == "killos -wykom":
+            WYKOM()
+        elif command in ("NOVA Private Subscription", "NPS"):
+            print(":: NOVA Private Subscription ::")
+            print("policy: you must have a KEY to activate/install killOS, this key you get in the NOVA store, or in the NOVA official website.")
+            npskey = input("key: ")
+            if npskey == "NOVA-543-NOVA":
+                print("installing...")
+                time.sleep(3)
+                print("installing...done")
+                print("rebooting...")
+                time.sleep(2)
+                print("\033[H\033[J", end="")
+                print("\nRunning system...")
+                time.sleep(1)
+                print("System run.")
+                print(f"{Fore.RED} $$\   $$\ $$$$$$\ $$\       $$\              $$$$$$\   $$$$$$\  ")
+                print(f"{Fore.RED} $$ | $$  |\_$$  _|$$ |      $$ |            $$  __$$\ $$  __$$\ ")
+                print(f"{Fore.RED} $$ |$$  /   $$ |  $$ |      $$ |            $$ /  $$ |$$ /  \__|")
+                print(f"{Fore.RED} $$$$$  /    $$ |  $$ |      $$ |  --------  $$ |  $$ |\$$$$$$\  ")
+                print(f"{Fore.RED} $$  $$<     $$ |  $$ |      $$ |            $$ |  $$ | \____$$\ ")
+                print(f"{Fore.RED} $$ |\$$\    $$ |  $$ |      $$ |            $$ |  $$ |$$\   $$ |")
+                print(f"{Fore.RED} $$ | \$$\ $$$$$$\ $$$$$$$$\ $$$$$$$$\        $$$$$$  |\$$$$$$  |")
+                print(f"{Fore.RED} \__|  \__|\______|\________|\________|       \______/  \______/ ")
+                print(f"{Fore.WHITE}")
+                print(" KILL OS linux menu. os based linux")
+
+                print("\r sectors: boot, home")
+                print("\r 1: boot 2: home")
+                choeice = int(input("\rsector?/: "))
+                if choeice == 1:
+                    print(error)
+                    print("thanks for your purchase")
+                elif choeice == 2:
+                    print(error)
+                    print("thanks for your purchase")
+        elif command in ("nova permission", "np"):
+            print(":: NOVA permission ::")
+            print("enter key nova:")
+            npskey = input("key: ")
+            if npskey == "NOVA-543-NOVA":
+                print("1/4 okey, enter the special root passw:")
+                rootpass = input("root pass: ")
+                if rootpass == "123321":
+                    print("2/4 okey, enter nova email:")
+                    getmail = input("nova email: ")
+                    if getmail == novacontactmail:
+                        print("3/4 okey, enter password image for nova workers:")
+                        passimage = input("password image: ")
+                        if passimage == "killos-767-2026-09-15":
+                            print("4/4 okey, OKEY.")
+                            print("4/5 okey, enter the special marker for nova workers:")
+                            marker = input("marker: ")
+                            if marker == "--nova@killos-call-try='systemcomponent'":
+                                print("5/5 okey, you have permission.")
+                                perflag = True
+                            else:
+                                print("invalid marker.")
+                        else:
+                            print("invalid password image.")
+                    else:
+                        print("invalid email.")
+                else:
+                    print("invalid root passw.")
+            else:
+                print("invalid key.")
+        elif command == "pacman -S DE-x11":
+            if yayactive == False:
+            
+                    print("\r packets (1) DE-x11,")
+                    print("\r                                          ")
+                    print("\r size of download: 1G")
+                    print("\r size of download: 0.3G")
+                    print("\r                                          ")
+                    print("\rdownload? (y/n)")
+                    print("\ry")
+                    print("\r :: download packets (1)")
+                    print("\r :: (0/1) download")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r[                                                ] DE-x11")
+                    time.sleep(3)
+                    print("\r[####                                            ] DE-x11")
+                    time.sleep(3)
+                    print("\r[########                                        ] DE-x11")
+                    time.sleep(3)
+                    print("\r[################################                ] DE-x11")
+                    time.sleep(2)
+                    print("\r[################################################] DE-x11")
+                    time.sleep(4)
+                    print("\r :: (2/2) download")
+                    print("\r :: open post-transaction hooks...")
+                    time.sleep(3)
+            else:
+                                            print("$ yay -S Syu")
+                                            print(f"{Fore.GREEN}➔ AUR Packages (2): DE-x11, x11")
+                                            print(f"{Fore.WHITE}")
+                                            time.sleep(1)
+                                            print("1 AUR Packages: DE-x11, x11")
+                                            time.sleep(3)
+                                            print(f"{Fore.GREEN}:: (1/2) Downloaded PKGBUILD: DE-x11")
+                                            print(f"{Fore.GREEN}:: (2/2) Downloaded PKGBUILD: x11")
+                                            print(f"{Fore.WHITE}")
+                                            print("➔ Diffs to show?")
+                                            choice = input("[N]one [A]ll (default=N): ")
+                                            if choice == "A":
+                                                print(f"{Fore.GREEN}:: (2/2) Parsing SRCINFO: DE-x11, x11")
+                                                print(f"{Fore.WHITE}")
+                    
+                                                print("Evaluating dirty packages...")
+                                                print(f"==> Making package: DE-x11 ({session_time}, 2026)")
+                                                print(f"==> Making package: DE-x11 ({session_time}, 2026)")
+                                                print("==> Checking runtime dependencies...")
+                                                print("==> Checking buildtime dependencies...")
+                                                print("==> Retrieving sources...")
+                                                print("  -> Downloading DE-x11, x11...")
+                                                time.sleep(4)
+                                                print("  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current")
+                                                print("                                 Dload  Upload   Total   Spent    Left  Speed")
+                                                print("30  40M  30  107M    0     0  22.4M      0  0:00:01  0:00:04 01:--:04 24.1M")
+                                                time.sleep(1)
+                                                print("  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current")
+                                                print("                                 Dload  Upload   Total   Spent    Left  Speed")
+                                                print("70  69M  70  107M    0     0  22.4M      0  0:00:02  0:00:04 02:--:04 25.1M")
+                                                time.sleep(1)
+                                                print("  -> Downloading DE-x11, x11...")
+                                                print("  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current")
+                                                print("                                 Dload  Upload   Total   Spent    Left  Speed")
+                                                print("80  80M  80  107M    0     0  22.4M      0  0:00:03  0:00:04 03:--:04 24.1M")
+                                                time.sleep(1)
+                                                print("  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current")
+                                                print("                                 Dload  Upload   Total   Spent    Left  Speed")
+                                                print("99  101M  99  107M    0     0  22.4M      0  0:00:04  0:00:03 --:--:-- 25.1M")
+                                                time.sleep(1)
+                                                print("  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current")
+                                                print("                                 Dload  Upload   Total   Spent    Left  Speed")
+                                                print("100  101M  100  107M    0     0  22.4M      0  0:00:04  0:00:04 --:--:-- 25.1M")
+                                                time.sleep(1)
+                                                markerde = True
+            markerde = True
+        elif command in ("NOVAccount", "nova acccount"):
+            print("------------------NOVAccount-------------------")
+            print("hello user, in nova accounts you can 'log up' and 'sign in', enter a what you want")
+            novaccountinput = input("~/superlink/novaccounts/@:")
+            
+            if novaccountinput == "log up":
+                usname = input("\nplease enter a name: ")
+                novamail = f"{usname.strip().lower()}@novaccount.com"
+                novacontactinputpasswd = input("please enter a passwd: ")
+                print("verification")
+                print("what word white?")
+                print("-----------------")
+                print("|               |")
+                print("|   §ĲpĖR       |")
+                print("|(for bad pc: sper, one letter miss)|")
+                print("-----------------")
+                print("'exit' for exit")
+                while True:
+                    verifyinput = input("/:")
+                    if verifyinput == "super":
+                        print("ok, you have verified account.")
+                        supabase.table("profiles").update({"verified": True}) .eq("username", usname).execute()
+                        break
+                    elif verifyinput == "exit":
+                        break
+                    else:
+                        print("invalid word.")
+                        print("try again.")
+                try:
+                    firstone = supabase.auth.sign_up({"email": novamail, "password": novacontactinputpasswd})
+                    newuser = firstone.user 
+                    if not newuser:
+                        print("err")
+                    else:
+                        supabase.table("profiles").insert(
+                            {"id": newuser.id, "username": usname.strip()}
+                        ).execute()
+                        print("verifing...")
+                        time.sleep(2)
+                        print("\033[H\033[J", end="")
+                        print("welcome back, user. nice to see you.")
+                        print("ok, create. you can see your account in the command: getaccount")
+                        newus = newuser
+                except Exception as e:
+                    print(f"sorry, err {e}")
+            elif novaccountinput == "sign in":
+                usname = input("please enter a user: ")  
+                novacontactinputpasswd = input("please enter a passwd: ")
+                print("verification")
+                print("what word white?")
+                print("-----------------")
+                print("|               |")
+                print("|   §ĲpĖR       |")
+                print("|(for bad pc: sper, one letter miss)|")
+                print("-----------------")
+                print("'exit' for exit")
+                while True:
+                    verifyinput = input("/:")
+                    if verifyinput == "super":
+                        print("ok, you have verified account.")
+                        supabase.table("profiles").update({"verified": True}) .eq("username", usname).execute()
+                        break
+                    elif verifyinput == "exit":
+                        break
+                    else:
+                        print("invalid word.")
+                        print("try again.")
+                novamail = f"{usname.strip().lower()}@novaccount.com"
+                try:
+                    response = supabase.auth.sign_in_with_password({"email": novamail, "password": novacontactinputpasswd,})
+                    userreq = response.user
+                    if userreq:
+                        time.sleep(2)
+                        print("\033[H\033[J", end="")
+                        print("welcome back, user. nice to see you.")
+                        newus = userreq
+                    else:
+                        print("err")
+                except Exception as e:
+                    print(f"sign in err, {e}")
+        elif command == "getaccount --delete":
+            try:
+                if newus == "":
+                    print("you dont have nova account> create account in 'NOVAccount'")
+                else:
+                    supabase.auth.admin.delete_user(newus.id)
+                    print("account deleted.")
+            except Exception as e:
+                print(f"you dont have account. or err {e}")
+
+        elif command == "getaccount":
+            try:
+                if newus == "":
+                    print("you dont have nova account> create account in 'NOVAccount'")
+                else:
+                    print(f"you have account, 0 proof")
+            except Exception as e:
+                print(f"you dont have account. or err {e}")
+        elif command == "version --max":
+            print(f"KILL OS linux max version: {requests.get('https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases/latest').json()['tag_name']}")
+        elif command == "NOVANetwork --chat":
+            print("------------ NOVANetwork, chat for people from different countries, but users of KillOS ------------")
+            print("'exit' to exit")
+            print("'delete' or 'del' to delete your massages")
+            print("'get' to get new massages")
+            print(" :: advisable use English")
+            if not newus:
+                print("you don't have nova account> create account in 'NOVAccount'")
+            else:
+                rspn = (supabase.table("massages").select("username, massage, created_at").order("created_at", desc=False).limit(30).execute())
+                if rspn.data:
+                    for row in rspn.data:
+                        time_str = row["created_at"].split("T")[1][:5]
+                        print(f"[{time_str}] {row['username']}: {row['massage']}")
+                else:
+                    print("chat is empty, send message?")
+                while True:
+                    try:
+                        chatmassag = input(f"{novacontactmail}/:")
+                        if chatmassag == "":
+                            print("massage is empty.")
+                        elif chatmassag == "exit":
+                            print("exit chat.")
+                            print("---------------------------------------------------------------------------------------------------")
+                            break
+                        elif chatmassag in ("delete", "del"):
+                            supabase.table("massages").delete().eq("user_id", newus.id).execute()
+                            print("your massages deleted.")
+                        elif chatmassag == "get":
+                            rspn = (supabase.table("massages").select("username, massage, created_at").order("created_at", desc=True).limit(6).execute())
+                            if rspn.data:
+                                for row in rspn.data:
+                                    time_str = row["created_at"].split("T")[1][:5]
+                                    print(f"[{time_str}] {row['username']}: {row['massage']}")
+                            else:
+                                print("chat is empty.")
+                        else:
+                            newusrsp = supabase.auth.get_user()
+                            newusrid = newusrsp.user.id
+                            profilersp = (
+                                supabase.table("profiles")
+                                .select("username")
+                                .eq("id", newusrid)
+                                .execute()
+                            )
+
+                            usnme = profilersp.data[0]["username"]
+                            supabase.table("massages").insert({
+                                "user_id": newusrid,
+                                "username": usnme,
+                                "massage": chatmassag,
+                            }).execute()
+
+                    except Exception as e:
+                        print(f"you don't have nova account. or err {e}")
+        elif command == "our TikTok":
+            webbrowser.open("tiktok.com/@novakillos")
         else:
-            print(f"\rUnknown command or {PermissionE}, or invalid directory")
+            print(f"\rUnknown command or {PermissionE}, or invalid directory.")
 elif choice == 2:
     print("\rKILL OS linux ↘")
-    
+
     print(f"\r CPU: {cpu}")
     print(f"\r RAM: {ram}")
     print(f"\r GPU: {gpu}")
